@@ -3,10 +3,34 @@ $(document).ready(function() {
     var documento = edicao.obterDocumento(),
         barraBotoes = edicao.obterBarraBotoes();
 
+    var editorInsercao = new eDitto("eDittoTextExample", {disableDefaultComponents: true});
+    var personalizacao = new eDittoButton(new eDittoButtonGroup(editorInsercao.obterBarraBotoes()), 'smile-o', "Elemento personalizado");
+    personalizacao.getButtonDOM().onclick = function() {
+      editorInsercao.obterDocumento().inserirTexto(":)");
+    };
 
+    var editorArquivo = new eDitto("eDittoFileLoadExample", {disableDefaultComponents: true});
+    var carregamento = new eDittoButton(new eDittoButtonGroup(editorArquivo.obterBarraBotoes()), 'random', "Modelo externo");
+    carregamento.getButtonDOM().onclick = function() {
+      editorArquivo.obterDocumento().carregar('/editto/modelos/testeExterno.html');
+    };
+
+
+    var editorArqVars = new eDitto("eDittoFileVarsExample", {disableDefaultComponents: true});
+    var tpl = new eDittoButton(new eDittoButtonGroup(editorArqVars.obterBarraBotoes()), 'random', "Carregamento de template");
+    tpl.getButtonDOM().onclick = function() {
+      var opcoes = [
+        {
+          variavel: 'titulo',
+          valor: prompt("Insira um título")
+        }
+      ];
+      editorArqVars.obterDocumento().carregar('/editto/modelos/testeTemplate.html', opcoes);
+    };
 
     // Elementos personalizados
     var buttonGroupCustom = new eDittoButtonGroup(barraBotoes);
+
 
     var btnImagem = new eDittoButton(buttonGroupCustom, "picture-o", "Imagem");
     btnImagem.getButtonDOM().onclick = function() {
@@ -22,28 +46,7 @@ $(document).ready(function() {
       }
     };
 
-    var personalizacao = new eDittoButton(buttonGroupCustom, 'smile-o', "Elemento personalizado");
-    personalizacao.getButtonDOM().onclick = function() {
-      documento.inserirTexto(":)");
-    };
-
-    var carregamento = new eDittoButton(buttonGroupCustom, 'random', "Modelo externo");
-    carregamento.getButtonDOM().onclick = function() {
-      documento.carregar('modelos/testeExterno.html')
-    };
-
-    var tpl = new eDittoButton(buttonGroupCustom, 'random', "Carregamento de template");
-    tpl.getButtonDOM().onclick = function() {
-      var opcoes = [
-        {
-          variavel: 'titulo',
-          valor: prompt("Insira um título")
-        }
-      ];
-      documento.carregar('modelos/testeTemplate.html', opcoes);
-    };
-
-    var stgIns = new eDittoButton(buttonGroupCustom, 'comment', "Olá, meu amigo")
+    var stgIns = new eDittoButton(buttonGroupCustom, 'comment', "Olá, meu amigo");
     stgIns.getButtonDOM().onclick = function() {
       var opcoes = [
           {

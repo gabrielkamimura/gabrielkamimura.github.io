@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8"/>
         <title>E-Ditto</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
         <link href="../bower_components/e-Ditto/src/themes/editto-pink-theme.css" rel="stylesheet" type="text/css"/>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -32,11 +33,13 @@
           <div class="col-md-4 col-sm-12 col-xs-12">
             <p>Insira as dependências</p>
             <div class="code-block">
-              <code>
-                &lt;link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/&gt;
-                <br />
-                &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
-              </code>
+              <pre>
+                <code>
+&lt;link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/&gt;
+
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+                </code>
+              </pre>
             </div>
 
             <p>Insira um textarea</p>
@@ -54,19 +57,113 @@
             </div>
           </div>
         </div>
-        <div layout="row">
+        <section id="area-personalizacoes">
           <h2>Personalizações</h2>
-          <div class="code-block">
-            <code>
-              var buttonGroupCustom = new eDittoButtonGroup(demo.obterBarraBotoes());// Definindo um grupode botões para a inserção da personalização
-
-              var smile = new eDittoButton(buttonGroupCustom, 'smile-o', "Elemento personalizado");
-              smile.getButtonDOM().onclick = function() {
-                demo.obterDocumento().inserirTexto(":)");
-              };
-            </code>
+          <h3>Inserção de texto</h3>
+          <div class="row" id="area-insercao-texto">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="editor-box">
+                <textarea id="eDittoTextExample">Clique no botão para inserir componente</textarea>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <div class="code-block">
+                <pre>
+                  <code>
+var editorInsercao = new eDitto("eDittoTextExample", {disableDefaultComponents: true});
+var personalizacao = new eDittoButton(new eDittoButtonGroup(editorInsercao.obterBarraBotoes()), 'smile-o', "Elemento personalizado");
+personalizacao.getButtonDOM().onclick = function() {
+  editorInsercao.obterDocumento().inserirTexto(":)");
+};
+                  </code>
+                </pre>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <!-- Área de exemplo de inserção de arquivo externo -->
+          <h3>Inserção de arquivo externo</h3>
+          <div class="row" id="area-insercao-arquivo">
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="editor-box">
+                <textarea id="eDittoFileLoadExample">Clique no botão para inserir componente</textarea>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <div class="code-block">
+                <pre>
+                  <code>
+// demo.js
+
+var editorArquivo = new eDitto("eDittoFileLoadExample", {disableDefaultComponents: true});
+var carregamento = new eDittoButton(new eDittoButtonGroup(editorArquivo.obterBarraBotoes()), 'random', "Modelo externo");
+carregamento.getButtonDOM().onclick = function() {
+  editorArquivo.obterDocumento().carregar('/editto/modelos/testeExterno.html')
+};
+                  </code>
+                </pre>
+              </div>
+
+              <div class="code-block">
+                <pre>
+                  <code>
+<!-- demoExterno.html -->
+&lt;h2&gt;Este é um arquivo externo de modelo para o editor&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Teste de carregamento de arquivo&lt;/li&gt;
+&lt;/ul>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Área de exemplo de inserção de arquivo com partes variáveis -->
+          <h3>Inserção de arquivo externo com variáveis</h3>
+          <div class="row" id="area-insercao-arquivo">
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="editor-box">
+                <textarea id="eDittoFileVarsExample">Clique no botão para inserir componente</textarea>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <div class="code-block">
+                <pre>
+                  <code>
+// demo.js
+var editorArqVars = new eDitto("eDittoFileVarsExample", {disableDefaultComponents: true});
+var tpl = new eDittoButton(new eDittoButtonGroup(editorArqVars.obterBarraBotoes()), 'random', "Carregamento de template");
+tpl.getButtonDOM().onclick = function() {
+  var opcoes = [
+    {
+      variavel: 'titulo',
+      valor: prompt("Insira um título")
+    }
+  ];
+  editorArqVars.obterDocumento().carregar('/editto/modelos/testeTemplate.html', opcoes);
+};
+                  </code>
+                </pre>
+              </div>
+
+              <div class="code-block">
+                <pre>
+                  <code>
+<!-- demoExterno.html -->
+&lt;h2&gt;{{ titulo }}&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Teste de carregamento de arquivo com conteúdo personalizado&lt;/li&gt;
+&lt;/ul>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
       </div>
 
     </body>
