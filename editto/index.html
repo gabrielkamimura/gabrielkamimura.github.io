@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>E-Ditto</title>
+        <link href="../bower_components/e-Ditto/src/themes/editto-pink-theme.css" rel="stylesheet" type="text/css"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href="/editto/style/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+      <nav class="navbar navbar-default navbar-custom">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">E-Ditto</a>
+          </div>
+
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class="container">
+        <div class="col-md-6">
+          <h1>E-Ditto - Um editor personalizável para a web</h1>
+          <p>Integre funcionalidades que seu site precisa para serem adicionados a um editor de texto.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-12 col-xs-12 editor-box">
+            <textarea id="textExample">Este é o conteúdo</textarea>
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <p>Insira as dependências</p>
+            <div class="code-block">
+              <code>
+                &lt;link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/&gt;
+                <br />
+                &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+              </code>
+            </div>
+
+            <p>Insira um textarea</p>
+            <div class="code-block">
+              <code>
+                &lt;textarea id="meuEditor"&gt;&lt;/textarea&gt;
+              </code>
+            </div>
+
+            <p>Chamada para o E-Ditto:</p>
+            <div class="code-block">
+              <code>
+                var edicao = new eDitto("textExample");
+              </code>
+            </div>
+          </div>
+        </div>
+        <div layout="row">
+          <h2>Personalizações</h2>
+          <div class="code-block">
+            <code>
+              var buttonGroupCustom = new eDittoButtonGroup(demo.obterBarraBotoes());// Definindo um grupode botões para a inserção da personalização
+
+              var smile = new eDittoButton(buttonGroupCustom, 'smile-o', "Elemento personalizado");
+              smile.getButtonDOM().onclick = function() {
+                demo.obterDocumento().inserirTexto(":)");
+              };
+            </code>
+          </div>
+        </div>
+      </div>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="../bower_components/e-Ditto/src/editto.js"></script>
+    <script src="/editto/scripts/script.js"></script>
+</html>

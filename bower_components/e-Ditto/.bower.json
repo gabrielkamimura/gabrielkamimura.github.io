@@ -1,0 +1,14 @@
+{
+  "name": "e-Ditto",
+  "homepage": "https://github.com/gabrielkamimura/e-Ditto",
+  "_release": "acda380bbb",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "acda380bbbb0305a5f4a554ba7ae4b5bfa382b4d"
+  },
+  "_source": "https://github.com/gabrielkamimura/e-Ditto.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/gabrielkamimura/e-Ditto.git",
+  "_direct": true
+}

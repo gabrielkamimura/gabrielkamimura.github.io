@@ -1,0 +1,29 @@
+.navbar-custom {
+  background-color: #e91e63;
+  border: none;
+  border-radius: 0;
+}
+
+.navbar-custom .navbar-brand {
+  color: #fff;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: #ddd;
+}
+
+.code-block {
+  background-color: #282c34;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+code {
+  background: none;
+  color: #fce4ec;
+}
+
+.editor-box {
+  background-color: #fafafa;
+  border-radius: 1em;
+}
