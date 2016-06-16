@@ -31,3 +31,12 @@ code, pre {
   background-color: #fafafa;
   border-radius: 1em;
 }
+
+.banner {
+  margin-top:2em;
+  margin-bottom: 12em;
+}
+
+.logo-banner {
+    margin: 0 auto;
+}
