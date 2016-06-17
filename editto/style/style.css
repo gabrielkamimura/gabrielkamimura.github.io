@@ -45,3 +45,37 @@ code, pre {
 body {
   color: #444;
 }
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-default {
+  border: #e6e6e6 solid 3px;
+  background-color: #e6e6e6;
+}
+
+.btn-default:hover {
+  background-color: #fff;
+  border-color: #e91e63;
+}
+
+.rodape {
+    margin-top: 5em;
+    padding-top:2em;
+    padding-bottom: 2em;
+    background-color: #fafafa;
+    text-align: right;
+}
+
+.primary-color {
+  color: #e91e63;
+}
+
+a {
+  color: #EC407A;
+}
+
+a:hover {
+  color: #C2185B
+}
