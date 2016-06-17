@@ -34,9 +34,14 @@ code, pre {
 
 .banner {
   margin-top:2em;
-  margin-bottom: 12em;
+  margin-bottom: 6em;
+  width: 27em;
 }
 
 .logo-banner {
     margin: 0 auto;
+}
+
+body {
+  color: #444;
 }
