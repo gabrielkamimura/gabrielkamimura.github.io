@@ -3,7 +3,8 @@
   <head>
     <title>Páginas de teste para AngularJS</title>
     <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Oxygen|Roboto+Mono" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Baloo+Bhaina|Oxygen|Roboto+Mono" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
     <style>
       * {
         font-family: 'Oxygen', sans-serif;
@@ -11,6 +12,11 @@
 
       h1, h2, h3, h4, h5, h5 {
         font-family: 'Baloo Bhaina', cursive;
+      }
+
+      head, body, html {
+        margin: 0;
+        padding: 0;
       }
 
       .corpo {
@@ -68,6 +74,28 @@
         font-family: 'Roboto Mono', monospace;
       }
 
+      .separate-top {
+        margin-top: 80px;
+      }
+
+      .header {
+
+      }
+
+      .footer {
+        width: 100%;
+        background-color: #34495e;
+        height: 8em;
+        text-align: right;
+        padding: 1em;
+        box-sizing: border-box;
+      }
+
+      .link-autor {
+        color: #ea6153;
+        font-weight: bold;
+      }
+
       ::-moz-selection { background-color: #e74c3c; color: #fff}
       ::selection { background-color: #e74c3c; color: #fff}
 
@@ -75,7 +103,8 @@
 
   </head>
   <body class="corpo">
-    <div class="container">
+
+    <header class="box header">
       <h1>Testes com AngularJS</h1>
       <div class="box">
         <button id="btn-ex1" class="btn btn-default">
@@ -85,21 +114,31 @@
           Exemplo 2
         </button>
       </div>
+    </header>
 
+    <div class="container">
       <div class="frames-area" id="frames-area" style="visibility: hidden;">
         <div class="box">
           <h2>Sem o AngularJS</h2>
           <iframe class="frame" id="frameComum"></iframe>
           <textarea class="code-area" id="tComum" disabled="disabled"></textarea>
         </div>
-        <div class="box">
+        <div class="box separate-top">
           <h3>Com o Angular</h3>
           <iframe class="frame" id="frameAngular"></iframe>
           <textarea class="code-area" id="tAngular" disabled="disabled"></textarea>
         </div>
       </div>
     </div>
-
+    <footer class="separate-top footer">
+      <p class="box">Site feito com
+        <i class="fa fa-heart icon-primary" aria-hidden="true"></i> por
+        <a href="//github.com/gabrielkamimura" class="link-autor" rel="author" target="_blank">
+          Gabriel Kamimura Yano
+        </a>
+      </p>
+      <small>Para apresentação inicial sobre AngularJS na empresa S9 Informática</small>
+    </footer>
     <script>
 
       function DefinirTemplateTexto(elemento, caminho) {
