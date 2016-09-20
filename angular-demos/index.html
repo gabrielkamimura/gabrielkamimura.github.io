@@ -70,7 +70,7 @@
         border: none;
         color: #fff;
         padding: 20px;
-        font-size: 14px;
+        font-size: 16px;
         font-family: 'Roboto Mono', monospace;
       }
 
@@ -79,7 +79,9 @@
       }
 
       .header {
-
+        background-color: #34495e;
+        margin: 0;
+        padding: 20px;
       }
 
       .footer {
@@ -94,6 +96,11 @@
       .link-autor {
         color: #ea6153;
         font-weight: bold;
+      }
+
+      .enunciado {
+        font-size: 18px;
+        max-width: 540px;
       }
 
       ::-moz-selection { background-color: #e74c3c; color: #fff}
@@ -118,7 +125,9 @@
 
     <div class="container">
       <div class="frames-area" id="frames-area" style="visibility: hidden;">
-        <div class="box">
+        <p id="descricao" class="enunciado"></p>
+
+        <div class="box separate-top">
           <h2>Sem o AngularJS</h2>
           <iframe class="frame" id="frameComum"></iframe>
           <textarea class="code-area" id="tComum" disabled="disabled"></textarea>
@@ -156,15 +165,18 @@
 
       function defineIframes(num) {
         var srcNormal = '',
-            srcAngular = '';
+            srcAngular = '',
+            texto = '';
         switch (num) {
           case 1:
             srcNormal = 'pages/parte1.html';
             srcAngular = 'pages/parte2.html';
+            texto = 'Faça uma tela com um campo de nome que apresente automaticamente o nome digitado em alguma área da tela';
             break;
           case 2:
               srcNormal = 'pages/parte3.html';
               srcAngular = 'pages/parte4.html';
+              texto = 'Faça uma tela com uma tabela contendo nomes e idades. Também faça campos de texto para nome e idade além de um botão para adicionar. Ao clicar nesse botão, deve ser adicionado esse nome e idade à tabela';
           default:
 
         }
@@ -183,7 +195,7 @@
         }
 
         document.getElementById('frames-area').style.visibility = 'visible';
-
+        document.getElementById('descricao').innerHTML = texto;
       }
 
       window.onload = function() {
