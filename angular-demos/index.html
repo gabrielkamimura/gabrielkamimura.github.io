@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Páginas de teste para AngularJS</title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Oxygen|Roboto+Mono" rel="stylesheet">
+    <style>
+      * {
+        font-family: 'Oxygen', sans-serif;
+      }
+
+      h1, h2, h3, h4, h5, h5 {
+        font-family: 'Baloo Bhaina', cursive;
+      }
+
+      .corpo {
+        background: #2c3e50;
+        color: #fff;
+      }
+
+      .btn {
+        padding: 10px;
+        border-radius: 20px;
+        background: none;
+        border: none;
+      }
+
+      .btn-default {
+          background-color: #ea6153;
+          border: 3px #ea6153 solid;
+          color: #fff;
+      }
+
+      .btn-default:hover {
+          background-color: #ea6153;
+          border: 3px #ecf0f1 solid;
+          color: #fff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .box {
+        margin: 20px;
+      }
+
+      .frame {
+        border-radius: 20px;
+        background-color: #fff;
+        border: none;
+        padding: 20px;
+        width: 40%;
+        height: 300px;
+      }
+
+      .code-area {
+        border-radius: 20px;
+        margin: none;
+        width: 40%;
+        height: 300px;
+        background-color: #34495e;
+        border: none;
+        color: #fff;
+        padding: 20px;
+        font-size: 14px;
+        font-family: 'Roboto Mono', monospace;
+      }
+
+      ::-moz-selection { background-color: #e74c3c; color: #fff}
+      ::selection { background-color: #e74c3c; color: #fff}
+
+    </style>
+
+  </head>
+  <body class="corpo">
+    <div class="container">
+      <h1>Testes com AngularJS</h1>
+      <div class="box">
+        <button id="btn-ex1" class="btn btn-default">
+          Exemplo 1
+        </button>
+        <button id="btn-ex2" class="btn btn-default">
+          Exemplo 2
+        </button>
+      </div>
+
+      <div class="frames-area" id="frames-area" style="visibility: hidden;">
+        <div class="box">
+          <h2>Sem o AngularJS</h2>
+          <iframe class="frame" id="frameComum"></iframe>
+          <textarea class="code-area" id="tComum" disabled="disabled"></textarea>
+        </div>
+        <div class="box">
+          <h3>Com o Angular</h3>
+          <iframe class="frame" id="frameAngular"></iframe>
+          <textarea class="code-area" id="tAngular" disabled="disabled"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      function DefinirTemplateTexto(elemento, caminho) {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                elemento.value = this.responseText;
+            }
+        };
+
+        xhttp.open("GET", caminho, true);
+        xhttp.send();
+      }
+
+      function defineIframes(num) {
+        var srcNormal = '',
+            srcAngular = '';
+        switch (num) {
+          case 1:
+            srcNormal = 'pages/parte1.html';
+            srcAngular = 'pages/parte2.html';
+            break;
+          case 2:
+              srcNormal = 'pages/parte3.html';
+              srcAngular = 'pages/parte4.html';
+          default:
+
+        }
+
+        var frameComum = document.getElementById('frameComum'),
+            frameAngular = document.getElementById('frameAngular')
+
+        frameComum.src = srcNormal;
+        frameComum.onload = function() {
+            DefinirTemplateTexto(document.getElementById('tComum'), srcNormal);
+        }
+
+        frameAngular.src = srcAngular;
+        frameAngular.onload = function() {
+            DefinirTemplateTexto(document.getElementById('tAngular'), srcAngular);
+        }
+
+        document.getElementById('frames-area').style.visibility = 'visible';
+
+      }
+
+      window.onload = function() {
+        document.getElementById('btn-ex1').onclick = function() {
+          defineIframes(1);
+        };
+
+        document.getElementById('btn-ex2').onclick = function() {
+          defineIframes(2);
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teste sem o Angular</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form>
+      <label>Nome</label>
+      <input type="text" id="fnome" />
+
+      <label>Idade</label>
+      <input type="text" id="fidade"/>
+      <button type="button" id="btn-add">Adicionar</button>
+    </form>
+
+    <table>
+      <thead>
+        <td>Nome</td>
+        <td>Idade</td>
+      </thead>
+      <tbody id="tableContent">
+      </tbody>
+    </table>
+
+
+    <script>
+      window.onload = function() {
+          document.getElementById('btn-add').onclick = function() {
+            var nome = document.getElementById('fnome').value,
+                idade = document.getElementById('fidade').value,
+                tableContent = document.getElementById('tableContent');
+
+              var newRow = document.createElement('tr');
+
+              var colNome = document.createElement('td');
+              colNome.innerHTML = nome;
+              newRow.appendChild(colNome);
+
+              var colIdade = document.createElement('td');
+              colIdade.innerHTML = idade;
+
+              newRow.appendChild(colIdade);
+
+              tableContent.appendChild(newRow);
+
+          }
+      }
+
+
+    </script>
+  </body>
+</html>

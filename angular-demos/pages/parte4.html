@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teste com o Angular</title>
+    <meta charset="utf-8" />
+  </head>
+  <body data-ng-app="app" data-ng-controller="TesteCtrl">
+    <form>
+      <label>Nome</label>
+      <input type="text"  data-ng-model="pessoa.nome"/>
+
+      <label>Idade</label>
+      <input type="text" data-ng-model="pessoa.idade"/>
+      <button type="button" data-ng-click="adicionarPessoa(pessoa)">Adicionar</button>
+    </form>
+
+    <table>
+      <thead>
+        <td>Nome</td>
+        <td>Idade</td>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="pessoa in pessoas">
+          <td>{{ pessoa.nome }}</td>
+          <td>{{ pessoa.idade }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="angular.min.js"></script>
+    <script>
+      var app = angular.module('app', [])
+
+      .controller('TesteCtrl', ['$scope', function($scope) {
+
+        $scope.pessoas = [];
+
+        $scope.adicionarPessoa = function(pessoa) {
+            $scope.pessoas.push(pessoa);
+        }
+
+
+      }])
+    </script>
+  </body>
+</html>
