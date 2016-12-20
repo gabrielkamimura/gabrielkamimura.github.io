@@ -1,0 +1,22 @@
+// Formatação do documento
+
+%formato-documento {
+    height: 30em;
+    width: 95%;
+    padding: 1em 1em;
+    box-sizing: border-box;
+}
+
+// O visual é o mesmo utilizado nos efeitos de baixa (box-effects)
+
+// Definição de classe
+
+.editto_document {
+    @extend %formato-documento;
+    @extend %boxEffects;
+
+}
+
+.editto_document:active, .editto_document:focus {
+  border-color: $color-background-active;
+}

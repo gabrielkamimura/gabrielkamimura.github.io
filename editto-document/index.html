@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editor para criação de conteúdo</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="themes/editto-pink-theme.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+      .navbar-custom {
+        border: none;
+        background-color: #fff;
+        background-color: #e91e63;
+        border-radius: 0;
+        padding: 1em;
+      }
+
+      .navbar-custom .navbar-brand {
+        color: #fff;
+      }
+
+      .corpo {
+        background-color: #fafafa;
+      }
+
+      .btn-default {
+        border: none;
+        padding-right: 1em;
+        background-color: #fff;
+      }
+
+      .editto_document {
+        background-color: #fff;
+      }
+
+      .code-box[disabled] {
+        background-color: #282c34;
+        color: #fce4ec;
+        padding: 1em;
+        border: none;
+      }
+
+      ::selection {
+        background: #e91e63; /* WebKit/Blink Browsers */
+        color: #fff;
+      }
+      ::-moz-selection {
+        background: #e91e63; /* Gecko Browsers */
+        color: #fff;
+      }
+
+    </style>
+
+  </head>
+  <body class="corpo">
+
+    <nav class="navbar navbar-default navbar-custom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            e-Ditto
+          </a>
+        </div>
+          <button type="button" class="btn btn-default navbar-btn navbar-right" id="btn-mostrarCodigo">Ver HTML</button>
+      </div>
+    </nav>
+    <div class="container">
+      <textarea id="meuEditor"></textarea>
+    </div>
+
+    <!-- Modal do código -->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" id="modalCodigo" role="dialog" aria-labelledby="modalCodigo">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Seu conteúdo em HTML</h2>
+          </div>
+          <div class="modal-body">
+            <textarea class="form-control code-box" disabled="disabled" id="area-exibicao-codigo"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="editto.js"></script>
+    <script>
+
+    $('document').ready(function () {
+      var edicao = new eDitto("meuEditor");
+
+      $('#btn-mostrarCodigo').click(function () {
+          $('#modalCodigo').modal('toggle');
+          $('#area-exibicao-codigo').val($('#meuEditor').val());
+      });
+    });
+
+    </script>
+  </body>
+
+</html>
