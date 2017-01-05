@@ -233,7 +233,7 @@
         // Elementos personalizados
         var buttonGroupCustom = new eDittoButtonGroup(barraBotoes);
 
-        var btnImagem = new eDittoButton(buttonGroupCustom, "/icons/insert_photo.svg", "Imagem");
+        var btnImagem = new eDittoButton(buttonGroupCustom, "@eDittoIcons/insert_photo.svg", "Imagem");
         btnImagem.getButtonDOM().onclick = function() {
           var url = prompt("Insira a url da imagem");
           if (url) {
@@ -248,7 +248,7 @@
         };
 
         //Inserção de vídeos do youtube
-        var youtubeEmbed = new eDittoButton(buttonGroupCustom, '/icons/YouTube-icon-dark.svg', "Vídeo do youtube");
+        var youtubeEmbed = new eDittoButton(buttonGroupCustom, '@eDittoIcons/YouTube-icon-dark.svg', "Vídeo do youtube");
         youtubeEmbed.getButtonDOM().onclick = function() {
             var opcoes = [{
                 variavel: 'enredecoVideo',
