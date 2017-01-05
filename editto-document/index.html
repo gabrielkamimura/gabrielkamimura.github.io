@@ -87,11 +87,189 @@
     <script>
 
     $('document').ready(function () {
-      var edicao = new eDitto("meuEditor");
+
+      /**
+       * Recebe uma string e um determinado caractere a ser alterado e retorna string com caracteres alterados
+       * @param  {string} string   A string a sofrer alteração
+       * @param  {string} token    Texto a ser buscado na string para modufucação
+       * @param  {string} newtoken Texto a reposicionar token
+       * @return {string}
+       */
+        var replaceAll = function(string, token, newtoken) {
+            var string = string || "";
+            while (string.indexOf(token) != -1) {
+                string = string.replace(token, newtoken);
+            }
+            return string;
+        };
+
+      var edicao = new eDitto("meuEditor", {disableDefaultComponents: true}),
+          documento = edicao.obterDocumento(),
+          barraBotoes = edicao.obterBarraBotoes();
+
+        var buttonGroup1 = new eDittoButtonGroup(barraBotoes);
+
+        var btnNegrito = new eDittoButton(buttonGroup1, "@eDittoIcons/bold.svg", "Negrito");
+        btnNegrito.getButtonDOM().onclick = function() {
+            barraBotoes.adicionarBotaoVerificacao(btnNegrito, 'bold');
+            documento.formatar('bold');
+            barraBotoes.verificarBotoes();
+        };
+
+        var btnItalico = new eDittoButton(buttonGroup1, "@eDittoIcons/italic.svg", "Itálico");
+        barraBotoes.adicionarBotaoVerificacao(btnItalico, 'italic');
+        btnItalico.getButtonDOM().onclick = function() {
+            documento.formatar('italic');
+            barraBotoes.verificarBotoes();
+        };
+
+        var btnUnderline = new eDittoButton(buttonGroup1, "@eDittoIcons/underline.svg", "Sublinhado");
+        barraBotoes.adicionarBotaoVerificacao(btnUnderline, 'underline');
+        btnUnderline.getButtonDOM().onclick = function() {
+            documento.formatar('underline');
+            barraBotoes.verificarBotoes();
+        };
+
+        var buttonGroup2 = new eDittoButtonGroup(barraBotoes);
+        var cores = [
+            {texto: 'Preto', valor: "rgb(0, 0, 0)"},
+            {texto: 'Cinza', valor: "rgb(158, 158, 158)"},
+            {texto: 'Marrom', valor: "rgb(121, 85, 72)"},
+            {texto: 'Azul', valor: "rgb(33, 150, 243)"},
+            {texto: 'Vermelho', valor: "rgb(244, 67, 54)"},
+            {texto: 'Amarelo', valor: "rgb(255, 235, 59)"},
+            {texto: 'Verde', valor: "rgb(76, 175, 80)"},
+            {texto: 'Laranja', valor: "rgb(255, 152, 0)"},
+            {texto: 'Roxo', valor: "rgb(156, 39, 176)"},
+            {texto: 'Rosa', valor: "rgb(233, 30, 99)"},
+            {texto: 'Ciano', valor: "rgb(0, 188, 212)"},
+            {texto: 'Azul claro', valor: "rgb(3, 169, 244)"},
+            {texto: 'Índigo', valor: "rgb(63, 81, 181)"},
+            {texto: 'Lima', valor: "rgb(205, 220, 57)"},
+            {texto: 'Laranja Escuro', valor: "rgb(255, 87, 34)"},
+            {texto: 'Rosa Claro', valor: "rgb(248, 187, 208)"},
+            {texto: 'Teal', valor: "rgb(0, 150, 136)"},
+            {texto: 'Roxo Escuro', valor: "rgb(103, 58, 183)"}
+        ];
+        var btnCor = new eDittoSelect(buttonGroup2, "Fonte", cores);
+        barraBotoes.adicionarBotaoVerificacao(btnCor, 'forecolor');
+        btnCor.getButtonDOM().onchange = function() {
+            documento.formatar('forecolor', btnCor.getValue());
+        };
+
+
+        var tamanhosTexto = [
+            {texto: '1', valor: '1'},
+            {texto: '2', valor: '2'},
+            {texto: '3', valor: '3'},
+            {texto: '4', valor: '4'},
+            {texto: '5', valor: '5'},
+            {texto: '6', valor: '6'},
+            {texto: '7', valor: '7'}
+        ];
+        var btntamanhofonte = new eDittoSelect(buttonGroup2, "Fonte", tamanhosTexto);
+        barraBotoes.adicionarBotaoVerificacao(btntamanhofonte, 'fontSize');
+        btntamanhofonte.getButtonDOM().onchange = function() {
+            documento.formatar('fontSize', btntamanhofonte.getValue());
+        };
+
+        var buttonGroup3 = new eDittoButtonGroup(barraBotoes);
+        var btnEsquerda = new eDittoButton(buttonGroup3, "@eDittoIcons/align_left.svg", "Alinhar à Esquerda");
+        barraBotoes.adicionarBotaoVerificacao(btnEsquerda, 'justifyleft');
+        btnEsquerda.getButtonDOM().onclick = function() {
+            documento.formatar('justifyleft');
+            barraBotoes.verificarBotoes();
+        };
+
+
+        var btnCentraliza = new eDittoButton(buttonGroup3, "@eDittoIcons/align_center.svg", "Centralizar");
+        barraBotoes.adicionarBotaoVerificacao(btnCentraliza, 'justifycenter');
+        btnCentraliza.getButtonDOM().onclick = function() {
+            documento.formatar('justifycenter');
+            barraBotoes.verificarBotoes();
+        };
+
+        var btnDireita = new eDittoButton(buttonGroup3, "@eDittoIcons/align_right.svg", "Alinhar à direita");
+        barraBotoes.adicionarBotaoVerificacao(btnDireita, 'justifyright');
+        btnDireita.getButtonDOM().onclick = function() {
+            documento.formatar('justifyright');
+            barraBotoes.verificarBotoes();
+        };
+
+        var buttonGroup4 = new eDittoButtonGroup(barraBotoes);
+        var btnNum = new eDittoButton(buttonGroup4, "@eDittoIcons/list_ol.svg", "Lista Numérica");
+        barraBotoes.adicionarBotaoVerificacao(btnNum, 'insertorderedlist');
+        btnNum.getButtonDOM().onclick = function() {
+          documento.formatar('insertorderedlist');
+          barraBotoes.verificarBotoes();
+        };
+
+        var btnLst = new eDittoButton(buttonGroup4, "@eDittoIcons/list_ul.svg", "Lista");
+        barraBotoes.adicionarBotaoVerificacao(btnLst, 'insertunorderedlist');
+        btnLst.getButtonDOM().onclick = function() {
+          documento.formatar('insertunorderedlist');
+          barraBotoes.verificarBotoes();
+        };
+
+        var buttonGroup5 = new eDittoButtonGroup(barraBotoes);
+        var btnLnk = new eDittoButton(buttonGroup5, '@eDittoIcons/link.svg', "link");
+        btnLnk.getButtonDOM().onclick = function() {
+            var sLnk = prompt('Digite a URL do link: ', 'http:\/\/');
+            if (sLnk && sLnk != '' && sLnk != 'http://') {
+                documento.formatar('createlink', sLnk);
+            };
+        };
+
+        var btnUlk = new eDittoButton(buttonGroup5, '@eDittoIcons/unlink.svg', "Remover Link");
+        btnUlk.getButtonDOM().onclick = function() {
+          documento.formatar('unlink');
+        }
+
+        var btnLmp = new eDittoButton(buttonGroup5, '@eDittoIcons/clear.svg', "Limpar Formatação");
+        btnLmp.getButtonDOM().onclick = function() {
+          documento.formatar('removeFormat');
+        };
+
+        // Elementos personalizados
+        var buttonGroupCustom = new eDittoButtonGroup(barraBotoes);
+
+        var btnImagem = new eDittoButton(buttonGroupCustom, "/icons/insert_photo.svg", "Imagem");
+        btnImagem.getButtonDOM().onclick = function() {
+          var url = prompt("Insira a url da imagem");
+          if (url) {
+              var opcoes = [
+                  {
+                      variavel: 'imagem.src',
+                      valor: url
+                  }
+              ];
+              documento.carregar('modelos/imageInsert.html', opcoes);
+          }
+        };
+
+        //Inserção de vídeos do youtube
+        var youtubeEmbed = new eDittoButton(buttonGroupCustom, '/icons/YouTube-icon-dark.svg', "Vídeo do youtube");
+        youtubeEmbed.getButtonDOM().onclick = function() {
+            var opcoes = [{
+                variavel: 'enredecoVideo',
+                valor: obterEmbedYoutube(prompt("Insira o endereço do vídeo."))
+            }];
+            documento.inserirComponente('<iframe style="width: 100%;" src="{{ enredecoVideo }}" width="560" height="315" frameborder="0" allowfullscreen></iframe>', opcoes);
+        };
+
+        //Conversão para vídeos do youtube
+        function obterEmbedYoutube(url) {
+            var regex = /(\?v=|\&v=|\/\d\/|\/embed\/|\/v\/|\.be\/)([a-zA-Z0-9\-\_]+)/;
+            var regexyoutubeurl = url.match(regex);
+            var src = "https://www.youtube.com/embed/" + regexyoutubeurl[2];
+            console.log(src);
+            return src;
+        };
+
 
       $('#btn-mostrarCodigo').click(function () {
           $('#modalCodigo').modal('toggle');
-          $('#area-exibicao-codigo').val($('#meuEditor').val());
+          $('#area-exibicao-codigo').val(replaceAll($('#meuEditor').val(), '"', "'"));
       });
     });
 
