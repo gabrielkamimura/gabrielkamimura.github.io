@@ -269,7 +269,7 @@
 
       $('#btn-mostrarCodigo').click(function () {
           $('#modalCodigo').modal('toggle');
-          $('#area-exibicao-codigo').val(replaceAll(replaceAll(replaceAll($('#meuEditor').val(), '"', "\'"), '”', "\'"), '“', "\'"));
+          $('#area-exibicao-codigo').val(replaceAll(replaceAll(replaceAll($('#meuEditor').val(), '"', "\'"), '”', "\'"), '“', "\'").replace(/\n|\r/g, ""));
       });
     });
 
