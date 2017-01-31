@@ -14,7 +14,7 @@
     <script>
       window.onload = function() {
           var fnome = document.getElementById('fnome');
-          fnome.onkeypress = function() {
+          fnome.oninput = function() {
             document.getElementById('areaTexto').innerHTML = this.value;
           }
       }
