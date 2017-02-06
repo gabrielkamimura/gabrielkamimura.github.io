@@ -1,9 +1,287 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Teste de página do github Pages</title>
+    <title>Gabriel Kamimura</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Oxygen" rel="stylesheet">
+
+    <style>
+      
+      * {
+        font-family: 'Oxygen', sans-serif;
+      }
+      
+      h1, 
+      h2, 
+      h3, 
+      h4, 
+      h5,
+      h6,
+      .navbar-custom {
+        font-family: 'Oswald', sans-serif;
+      }
+      
+      .navbar-custom {
+        border: none;
+        background-color: #fff;
+        background-color: #f5f5f5;
+        border-radius: 0;
+        padding: 1em;
+      }
+
+      .navbar-custom .navbar-brand {
+        color: #000;
+      }
+
+      .corpo {
+        background-color: #fafafa;
+      }
+
+      .btn-default {
+        border: none;
+        padding-right: 1em;
+        background-color: #fff;
+      }
+
+      .editto_document {
+        background-color: #fff;
+      }
+
+      .code-box[disabled] {
+        background-color: #282c34;
+        color: #fce4ec;
+        padding: 1em;
+        border: none;
+      }
+
+      ::selection {
+        background: #CCFF90; /* WebKit/Blink Browsers */
+        color: #000;
+      }
+      ::-moz-selection {
+        background: #CCFF90; /* Gecko Browsers */
+        color: #000;
+      }
+      
+      .img-avatar {
+        height: 10em;
+        widows: 10em;
+          
+        border-radius: 50%;
+      }
+      
+      /* Círculos sociais */
+      
+      /* footer social icons */
+      
+      .social-network {
+        padding-top: 2em;
+        padding-bottom: 2em;
+      }
+      
+      .social-network a.icoLinkedin {
+        background-color:#0077B5;
+      }
+      .social-network a.icoGitHub {
+        background-color:#000;
+        color: #fff;
+      }
+      
+      .social-network a.icoMedium {
+        background-color:#00ab6c;
+        color: #fff;
+      }
+
+      .social-circle a {
+        display:inline-block;
+        position:relative;
+        margin:0 auto 0 auto;
+        -moz-border-radius:50%;
+        -webkit-border-radius:50%;
+        border-radius:50%;
+        text-align:center;
+        width: 50px;
+        height: 50px;
+        font-size:20px;
+      }
+      .social-circle i {
+        margin:0;
+        line-height:50px;
+        text-align: center;
+      }
+
+      .social-circle a:hover i, .triggeredHover {
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms--transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        transition: all 0.2s;
+      }
+      .social-circle i {
+        color: #fff;
+        -webkit-transition: all 0.8s;
+        -moz-transition: all 0.8s;
+        -o-transition: all 0.8s;
+        -ms-transition: all 0.8s;
+        transition: all 0.8s;
+      }
+
+      .social-circle a {
+        background-color: #eb6b56;   
+      }
+      
+      .project-logo {
+        max-width: 20rem;
+      }
+      
+      .box-separete-top {
+        margin-top: 4em;
+      }
+      
+      .box-separete-bottom {
+        margin-bottom: 4em;
+      }
+      
+      .project-box {
+        background-color: #eee;
+        padding: 2em;
+      }
+      
+      .btn-primary {
+        background-color: #69f0ae;
+        border-radius: 20px;
+        border: none;
+        color: #000;
+      }
+      
+      .btn-primary:hover {
+        background-color: #43A047;
+        color: #fff;
+      }
+
+    </style>
+
   </head>
-  <body>
-    <h1>GitHub Pages</h1>
+  <body class="corpo">
+
+    <nav class="navbar navbar-default navbar-custom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+<!--
+          <a class="navbar-brand" href="#">
+            Gabriel Kamimura
+          </a>
+-->
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img class="img-avatar" id="tImgAvatar" src="" alt="Imagem de avatar/perfil"/>
+        </div>
+        <div class="col-md-6">
+          <h1>Gabriel Kamimura</h1>
+          <p id="tBio">Desenvolvedor front-end. Adora estudar sobre desenvolvimento, design, Interação Humano-Computador e Experiência de usuário.</p>
+          <div class="col-md-9">
+            <div class="social-network social-circle row">
+              <div class="col-md-4 col-xs-4">
+                <a title="Linkedin" target="_blank" href="//www.linkedin.com/in/gabriel-kamimura-yano-7b4507a9/" class="icoLinkedin">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </div>
+              <div class="col-md-4 col-xs-4">
+                <a title="GitHub" target="_blank" href="//github.com/gabrielkamimura" class="icoGitHub">
+                  <i class="fa fa-github"></i>
+                </a>
+              </div>
+              <div class="col-md-4 col-xs-4">
+                <a title="Medium" target="_blank" href="//medium.com/@gabrielk.yano" class="icoMedium">
+                  <i class="fa fa-medium"></i>
+                </a>
+              </div>
+            </div>
+        </div>
+      
+      </div>
+    </div>
+    </div>
+    <div class="conatiner-fluid">
+    <div class="project-box">
+      <div class="row box-separete-top box-separate-bottom">
+        <h2>Projetos</h2>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="project-logo" src="img/logo-editto.png" alt="Imagem do E-Ditto">
+            <div class="card-block">
+              <h4 class="card-title">E-Ditto</h4>
+              <p class="card-text">Editor modular, flexível e adaptável para a web</p>
+              <a href="https://gabrielkamimura.github.io/editto/" class="btn btn-primary" target="_blank">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="project-logo" src="img/logo-boog.png" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">Vida de Boog</h4>
+              <p class="card-text">Blog sobre quadrinhos e cachorros</p>
+              <a href="http://www.vidadeboog.com.br/" class="btn btn-primary" target="_blank">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row box-separete-top">
+        <div class="col-md-2"></div>
+         <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <div class="card-block">
+              <h4 class="card-title">Angular-demos</h4>
+              <p class="card-text">Site com demonstrações básicas iniciais de AngularJS</p>
+              <a href="https://gabrielkamimura.github.io/angular-demos/" class="btn btn-primary" target="_blank">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <div class="card-block">
+              <h4 class="card-title">E-Ditto Document</h4>
+              <p class="card-text">Utilização do E-Ditto para criar um documento em HTML</p>
+              <a href="https://gabrielkamimura.github.io/editto-document/" class="btn btn-primary" target="_blank">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        var urlAPI = "https://api.github.com/users/gabrielkamimura";
+        var rquest = $.get( urlAPI, function() {
+
+        })
+          .done(function(response) {
+            console.log(response);
+            $('#tImgAvatar').attr("src", response.avatar_url);
+          })
+          .fail(function(response) {
+            console.error(response)
+          })
+          .always(function() {
+          });
+      });
+    </script>
   </body>
+
 </html>
