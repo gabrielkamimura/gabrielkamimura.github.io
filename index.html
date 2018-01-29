@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Oxygen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chau+Philomene+One|Raleway" rel="stylesheet">
 
     <style>
       
       * {
-        font-family: 'Oxygen', sans-serif;
+        font-family: 'Raleway', sans-serif;
       }
       
       h1, 
@@ -20,13 +20,12 @@
       h5,
       h6,
       .navbar-custom {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Chau Philomene One', sans-serif;
       }
       
       .navbar-custom {
         border: none;
         background-color: #fff;
-        background-color: #f5f5f5;
         border-radius: 0;
         padding: 1em;
       }
@@ -36,7 +35,6 @@
       }
 
       .corpo {
-        background-color: #fafafa;
       }
 
       .btn-default {
@@ -66,10 +64,7 @@
       }
       
       .img-avatar {
-        height: 10em;
-        widows: 10em;
-          
-        border-radius: 50%;
+        width: 100%;
       }
       
       /* Círculos sociais */
@@ -137,7 +132,7 @@
       }
       
       .project-logo {
-        max-width: 20rem;
+        max-width: 100%;
       }
       
       .box-separete-top {
@@ -149,7 +144,6 @@
       }
       
       .project-box {
-        background-color: #eee;
         padding: 2em;
       }
       
@@ -164,73 +158,95 @@
         background-color: #43A047;
         color: #fff;
       }
+      
+      .gk-navbar {
+        text-align: center; margin: 0 auto;
+        border-bottom: solid 11px #000;
+        margin-bottom: 40px;
+      }
+      
+      .gk-navbar__title {
+        font-size: 30px;
+      }
+      
+      .gk-navbar__social-icons__item {
+        color: #000;
+        text-decoration: none;
+        margin: 1em;
+      }
+      
+      .gk-banner {
+        margin-bottom: 40px;
+      }
+      
+      .card {
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+        margin: 8px;
+        border-radius: 2px;
+        padding: 1em;
+      }
 
     </style>
 
   </head>
   <body class="corpo">
 
-    <nav class="navbar navbar-default navbar-custom">
+    <nav class="navbar navbar-default navbar-custom gk-navbar">
       <div class="container-fluid">
-        <div class="navbar-header">
-<!--
-          <a class="navbar-brand" href="#">
-            Gabriel Kamimura
-          </a>
--->
-        </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="gk-navbar__title">Gabriel Kamimura</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                  <a title="Linkedin" target="_blank" href="//www.linkedin.com/in/gabriel-kamimura-yano-7b4507a9/" class="gk-navbar__social-icons__item">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a title="GitHub" target="_blank" href="//github.com/gabrielkamimura" class="gk-navbar__social-icons__item">
+                    <i class="fa fa-github"></i>
+                  </a>
+                  <a title="Medium" target="_blank" href="//medium.com/@gabrielk.yano" class="gk-navbar__social-icons__item">
+                    <i class="fa fa-medium"></i>
+                  </a>
+              </div>
+            </div>
+          </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="gk-banner container">
       <div class="row">
         <div class="col-md-3">
           <img class="img-avatar" id="tImgAvatar" src="" alt="Imagem de avatar/perfil"/>
         </div>
         <div class="col-md-6">
-          <h1>Gabriel Kamimura</h1>
-          <p id="tBio">Desenvolvedor front-end. Adora estudar sobre desenvolvimento, design, Interação Humano-Computador e Experiência de usuário.</p>
-          <div class="col-md-9">
-            <div class="social-network social-circle row">
-              <div class="col-md-4 col-xs-4">
-                <a title="Linkedin" target="_blank" href="//www.linkedin.com/in/gabriel-kamimura-yano-7b4507a9/" class="icoLinkedin">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
-              <div class="col-md-4 col-xs-4">
-                <a title="GitHub" target="_blank" href="//github.com/gabrielkamimura" class="icoGitHub">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-              <div class="col-md-4 col-xs-4">
-                <a title="Medium" target="_blank" href="//medium.com/@gabrielk.yano" class="icoMedium">
-                  <i class="fa fa-medium"></i>
-                </a>
-              </div>
-            </div>
+          <h1>Olá :)</h1>
+          <p id="tBio">Sou Gabriel, desenvolvedor front-end. Adoro estudar sobre desenvolvimento, design, Interação Humano-Computador e Experiência de usuário.</p>      
         </div>
-      
       </div>
     </div>
-    </div>
-    <div class="conatiner-fluid">
-    <div class="project-box">
+    <div class="container project-box">
       <div class="row box-separete-top box-separate-bottom">
         <h2>Projetos</h2>
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-          <div class="card" style="width: 20rem;">
-            <img class="project-logo" src="img/logo-editto.png" alt="Imagem do E-Ditto">
-            <div class="card-block">
+        <div class="col-md-6">
+          <div class="card row">
+            <div class="col-md-6">
+              <img class="project-logo" src="img/logo-editto.png" alt="Imagem do E-Ditto">
+            </div>
+            <div class="col-md-6 card-block">
               <h4 class="card-title">E-Ditto</h4>
               <p class="card-text">Editor modular, flexível e adaptável para a web</p>
               <a href="https://gabrielkamimura.github.io/editto/" class="btn btn-primary" target="_blank">Saiba mais</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 20rem;">
-            <img class="project-logo" src="img/logo-boog.png" alt="Card image cap">
-            <div class="card-block">
+        <div class="col-md-6">
+          <div class="card row">
+            <div class="col-md-6">
+              <img class="project-logo" src="img/logo-boog.png" alt="Card image cap">
+            </div>
+            <div class="col-md-6 card-block">
               <h4 class="card-title">Vida de Boog</h4>
               <p class="card-text">Blog sobre quadrinhos e cachorros</p>
               <a href="http://www.vidadeboog.com.br/" class="btn btn-primary" target="_blank">Saiba mais</a>
@@ -239,9 +255,8 @@
         </div>
       </div>
       <div class="row box-separete-top">
-        <div class="col-md-2"></div>
-         <div class="col-md-4">
-          <div class="card" style="width: 20rem;">
+         <div class="col-md-6">
+          <div class="card">
             <div class="card-block">
               <h4 class="card-title">Angular-demos</h4>
               <p class="card-text">Site com demonstrações básicas iniciais de AngularJS</p>
@@ -249,8 +264,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 20rem;">
+        <div class="col-md-6">
+          <div class="card">
             <div class="card-block">
               <h4 class="card-title">E-Ditto Document</h4>
               <p class="card-text">Utilização do E-Ditto para criar um documento em HTML</p>
