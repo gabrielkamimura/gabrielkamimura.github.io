@@ -1,0 +1,13 @@
+{
+    "name": "eDitto",
+    "description": "Editor de Texto",
+    "dependencies": {
+        "http-server": "^0.6.1",
+        "gulp": "*",
+        "gulp-sass": "*",
+        "gulp-minify-css": "*",
+        "gulp-concat": "*",
+        "gulp-uglify": "*"
+    },
+    "engine": "node >= 0.4.1"
+}
