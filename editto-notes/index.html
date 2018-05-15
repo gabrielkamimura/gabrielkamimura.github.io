@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="assets/e-Ditto/themes/editto-purple-theme.css" />
+  <meta charset="utf-8" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <style>
+    
+    .bg-primary, 
+    .list-group-item.active, 
+    .btn-primary {
+      background-color: #3F51B5 !important;
+      border-color: #3F51B5 !important;
+    }
+    
+    .note-wrapper {
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space:nowrap;
+      height: 15em;
+      width: 100%;
+
+    }
+    
+    .note-card {
+      display:inline-table;
+      height: 15em;
+      width: 15em;
+      margin-right: 1em;
+    }
+    
+    .editor-personalizado {
+      border: none;
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <section id="list">
+        <button onclick="notaController.novaNota()" class="btn btn-primary btn-lg btn-block">+ Nova</button>
+        <br />
+        <section class="note-wrapper" id="listagem-notas">
+        </section>
+      </section>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+  <!--        <img src="//gabrielkamimura.github.io/img/logo-editto.png" width="30" height="30" class="d-inline-block align-top" alt="">-->
+        Editto Notes
+        
+      </a>
+      <button onclick="notaController.salvar(event)" class="btn btn-outline-light">
+        Salvar
+      </button>
+    </div>
+  </nav>
+</div>
+  
+  
+  <section class="container">
+      
+      <section id="note">
+          <editto-button-bar class="editto-buttom-bar" editto="minhaNota">
+            <div class="editto-button-group">
+              <button class="editto-button editto-button__icon" data-editto-format="bold"><img src="assets/e-Ditto/icons/bold.svg"/></button>
+              <button class="editto-button editto-button__icon" data-editto-format="italic"><img src="assets/e-Ditto/icons/italic.svg "/></button>
+              <button class="editto-button editto-button__icon" data-editto-format="underline"><img src="assets/e-Ditto/icons/underline.svg"/></button>
+            </div>
+            <div class="editto-button-group">
+              <button class="editto-button editto-button__icon" data-editto-format="justifyleft"><img src="assets/e-Ditto/icons/align_left.png"/></button>
+              <button class="editto-button editto-button__icon" data-editto-format="justifycenter"><img src="assets/e-Ditto/icons/align_center.svg"/></button>
+              <button class="editto-button editto-button__icon" data-editto-format="justifyright"><img src="assets/e-Ditto/icons/align_right.svg"/></button>
+            </div>
+            <div class="editto-button-group">
+              <button class="editto-button editto-button__icon" data-editto-format="insertorderedlist"><img src="assets/e-Ditto/icons/list_ol.svg"/></button>
+              <button class="editto-button editto-button__icon" data-editto-format="insertunorderedlist"><img src="assets/e-Ditto/icons/list_ul.svg"/></button>
+            </div>
+          </editto-button-bar>
+          <editto-editor class="editto-editor editor-personalizado" id="minhaNota">
+            <h1> Hello World!</h1>
+            <p>Some text should be written here.</p> 
+          </editto-editor>
+
+      </section>
+  </section>
+  
+  <script src="assets/e-Ditto/editto.es6.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="js/model/Nota.js"></script>
+  <script src="js/model/ListaNotas.js"></script>
+  
+  <script src="js/view/View.js"></script>
+  <script src="js/view/ListNoteView.js"></script>
+  
+  <script src="js/controller/NotaController.js"></script>
+  <script>
+    let notaController = new NotaController();
+  </script>
+  <script>
+    self.addEventListener('install', function(event) {
+      event.waitUntil(
+        caches.open(cacheName).then(function(cache) {
+          return cache.addAll(
+            [
+              '/assets/bootstrap/dist/css/bootstrap.css',
+              '/assets/e-Ditto/themes/editto-purple-theme.css',
+              '/assets/e-Ditto/icons/bold.svg',
+              '/assets/e-Ditto/icons/italic.svg',
+              '/assets/e-Ditto/icons/underline.svg',
+              '/assets/e-Ditto/icons/align_left.png',
+              '/assets/e-Ditto/icons/align_center.svg',
+              '/assets/e-Ditto/icons/align_right.svg',
+              '/assets/e-Ditto/icons/list_ol.svg',
+              '/assets/e-Ditto/icons/list_ul.svg',
+              '/assets/e-Ditto/editto.es6.js',
+              '/js/model/Nota.js',
+              '/js/model/ListaNotas.js',
+              '/js/view/View.js',
+              '/js/view/ListNoteView.js',
+              'js/controller/NotaController.js',
+              'index.html'
+            ]
+          );
+        })
+      );
+    });
+  </script>
+</body>
+</html>
