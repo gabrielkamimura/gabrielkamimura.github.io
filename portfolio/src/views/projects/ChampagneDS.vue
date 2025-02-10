@@ -22,7 +22,7 @@
     <section class="py-4">
       <h1>Equipe e papel</h1>
       <p>
-        Responsável em conjunto com outros designers de <b>manter e construir o Design System da empresa</b>, buscando por padrões usáveis pelos usuários e criando componentes que respeitem padrões de interação e entendíeis pelo time de design e desenvolvimento.
+        Responsável em conjunto com outros designers por <b>manter e construir o Design System da empresa</b>, buscando por padrões usáveis pelos usuários e criando componentes que respeitem padrões de interação para os times de design e desenvolvimento.
       </p>
     </section>
 
