@@ -1,0 +1,142 @@
+@import './tokens.scss';
+/* @import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
+
+
+// Importe as funções, variáveis e mixins do Bootstrap
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Recrie o mapa de cores com a nova cor primária
+$theme-colors: (
+  "primary": $primary-500,
+  "link": $primary-500
+);
+
+// Importe os estilos principais do Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Importa apenas os estilos básicos do Font Awesome
+@import "@fortawesome/fontawesome-free/css/all.css"; 
+@import "@fortawesome/fontawesome-free/scss/functions";
+@import "@fortawesome/fontawesome-free/scss/variables";
+@import "@fortawesome/fontawesome-free/scss/mixins";
+
+// Importa os ícones desejados
+@import "@fortawesome/fontawesome-free/scss/core";
+@import "@fortawesome/fontawesome-free/scss/icons"; // Importa todos os ícones
+@import "@fortawesome/fontawesome-free/scss/brands"; // Importa só os ícones de marcas
+@import "@fortawesome/fontawesome-free/scss/solid"; // Importa os ícones sólidos
+@import "@fortawesome/fontawesome-free/scss/regular"; // Importa os ícones regulares
+
+.main-portfolio {
+  background-color: $background-500;
+  margin-top: 80px;
+  margin-bottom: 6rem;
+}
+
+.portfolio-container {
+  max-width: $max-width;
+}
+
+body {
+  font-family: "Urbanist", serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  background-color: $background-500;
+
+  @media screen and (min-width: 992px) {
+    font-size: 24px;
+  }
+}
+
+p {
+  @media screen and (min-width: 992px) {
+    line-height: 36px; /* 138.462% */
+  }
+}
+
+.display-1 {
+  color: $neutral-700;
+  font-weight: 700;
+
+  @media screen and (min-width: 992px) {
+    font-size: 64px;
+  }
+}
+
+.back-button  {
+  color: $primary-500;
+  text-decoration: none;
+
+  &:hover, &:active {
+    color: $primary-600 !important;
+    background: none !important;
+  }
+}
+
+.card-results {
+  border: none;
+  border-radius: 16px;
+  &__icon {
+    font-size: 50px;
+  }
+
+  &__image-wrapper {
+    min-height: 110px;
+  }
+}
+
+.text-danger {
+  color: $danger-500;
+}
+
+.text-success {
+  color: $success-500;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: $neutral-300;
+  background: $primary-500;
+}
+
+::selection {
+  color: $neutral-300;
+  background: $primary-500;
+
+}
