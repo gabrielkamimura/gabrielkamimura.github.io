@@ -19,7 +19,7 @@ import ProjectCard from '../components/ProjectCard.vue'
           <ProjectCard 
             title="Redesenho do App Grand Cru"
             description="Melhoria de usabilidade e experiência de compra"
-            image="/src/assets/images/covers/app-gc-cover.png"
+            image="/covers/app-gc-cover.png"
             to="/projects/grand-cru-app"
             role="Product Design, UI Design"
           />
@@ -28,7 +28,7 @@ import ProjectCard from '../components/ProjectCard.vue'
           <ProjectCard 
             title="Mais Personalização"
             description="Autonomia e usabilidade para assinantes de vinhos"
-            image="/src/assets/images/covers/flex-cover.png"
+            image="/covers/flex-cover.png"
             to="/projects/flex-confraria"
             role="UX Research, Product Design, UI Design"
           />
@@ -40,7 +40,7 @@ import ProjectCard from '../components/ProjectCard.vue'
           <ProjectCard 
             title="Mercado de Sneakers Exclusivos"
             description="Experiência em lançamentos limitados e exclusivos"
-            image="/src/assets/images/covers/sneakers-cover.png"
+            image="/covers/sneakers-cover.png"
             to="/projects/sneaker-drop"
             role="UX research, UI, Design"
           />
@@ -49,7 +49,7 @@ import ProjectCard from '../components/ProjectCard.vue'
           <ProjectCard 
             title="Design System Multi-Marcas"
             description="Evino, Grand Cru e Víssimo. Android, iOS e web"
-            image="/src/assets/images/covers/ds-cover.png"
+            image="/covers/ds-cover.png"
             to="/projects/champagne-ds"
             role="Product Design, UI Design"
           />

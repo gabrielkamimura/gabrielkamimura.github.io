@@ -40,6 +40,6 @@
     border-radius: 15px;
     background: no-repeat left center;
     height: 100%;
-    background-image: url('src/assets/images/bg-about.png');
+    background-image: url('../assets/images/bg-about.png');
   }
 </style>
